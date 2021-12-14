@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. ~/scripts/dmenu/config
+
 history=~/.cache/dmenu/search_history
 
 save () {
@@ -11,7 +13,7 @@ save () {
     fi
 }
 
-search="$(cat $history | ~/scripts/dmenu/config)"
+search="$(cat $history | dmenu_norm)"
 
 if [ "$search" = clear ]; then > $history
 elif [ "$search" != "" ]; then
@@ -26,4 +28,3 @@ elif [ "$search" != "" ]; then
     fi
     xdg-open $search &
 fi
-

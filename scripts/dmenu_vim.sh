@@ -1,3 +1,11 @@
 #!/bin/sh
 
-kitty nvim -S ~/.local/share/nvim/session/$(ls ~/.local/share/nvim/session/ | ~/scripts/dmenu/config)
+. ~/scripts/dmenu/config
+
+sessiond=~/.local/share/nvim/session/
+
+session=$(ls $sessiond | dmenu_rejc)
+
+if [ "$session" != "" ]; then
+    kitty nvim -S $sessiond$session
+fi

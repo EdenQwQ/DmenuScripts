@@ -4,4 +4,20 @@
 
 export PATH="/usr/local/bin:$PATH"
 
-dmenu -i -fn "Iosevka Nerd Font" -nb "$color0" -nf "$color15" -sb "$color0" -sf "$color15" -nhb "$color0" -shb "$color0" -nhf "$color2" -shf "$color1"
+line=20
+
+dmenu_norm() {
+    dmenu -i -nb "$color0" -nf "$color15" -sb "$color0" -sf "$color15" -nhb "$color0" -shb "$color0" -nhf "$color2" -shf "$color1"
+}
+
+dmenu_rejc() {
+    dmenu -i -r -nb "$color0" -nf "$color15" -sb "$color0" -sf "$color15" -nhb "$color0" -shb "$color0" -nhf "$color2" -shf "$color1"
+}
+
+dmenu_line_norm() {
+    dmenu -l $line -i -nb "$color0" -nf "$color15" -sb "$color0" -sf "$color15" -nhb "$color0" -shb "$color0" -nhf "$color2" -shf "$color1"
+}
+
+dmenu_line_rejc() {
+    dmenu -l $line -i -r -nb "$color0" -nf "$color15" -sb "$color0" -sf "$color15" -nhb "$color0" -shb "$color0" -nhf "$color2" -shf "$color1"
+}
